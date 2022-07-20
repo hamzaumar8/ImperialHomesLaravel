@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('position');
             $table->string('phone1');
-            $table->string('phone2');
+            $table->string('phone2')->nullable();
             $table->string('id_number');
             $table->string('passport_picture');
             $table->timestamps();
