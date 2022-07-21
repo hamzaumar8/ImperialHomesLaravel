@@ -16,7 +16,7 @@
         </div>
         <div class="mb-4">
             <x-input label="Website" id="website" class="block mt-1 w-full" type="url" name="website" required
-                prefix="https://www." wire:model="state.website" />
+                wire:model="state.website" />
         </div>
     </div>
 
@@ -53,12 +53,11 @@
     <!--  -->
     <div class="grid grid-cols-2 gap-4">
         <div class="mb-4">
-            <select label="Previously work With IHL" id="prev_work_status" class="block mt-1 w-full bg-white rounded-[4px] shadow-sm
-        border-gray-200 focus:border-gray-300 focus:ring focus:ring-gray-200 focus:ring-opacity-50" type="text"
-                name="prev_work_status" required wire:model="state.prev_work_status">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select>
+            <x-native-select label="Previously work With IHL" :options="[
+                ['name' => '',  'value' => ''],
+                ['name' => 'Yes',  'value' => 'yes'],
+                ['name' => 'No',  'value' => 'no'],
+                ]" option-label="name" option-value="value" wire:model="state.prev_work_status" />
         </div>
         <div class="mb-4">
             <x-input label="Geographical Area" id="geographical_area" class="block mt-1 w-full" type="text"

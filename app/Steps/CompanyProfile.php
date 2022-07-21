@@ -54,7 +54,7 @@ class CompanyProfile extends Step
                 'state.website'    => ['max:255'],
                 'state.details_of_service_goods'    => ['required', 'max:255'],
                 'state.established_date'    => ['required', 'max:255'],
-                'state.gross_annual_sale'    => ['required', 'numeric', 'max:255'],
+                'state.gross_annual_sale'    => ['required', 'numeric'],
                 'state.prev_work_status'    => ['required', 'max:255'],
                 'state.geographical_area'    => ['required', 'max:255'],
             ],
@@ -69,7 +69,7 @@ class CompanyProfile extends Step
                 'state.details_of_service_goods'    => __('General Details Of Service / Goods'),
                 'state.established_date'    => __('Establiment Date'),
                 'state.gross_annual_sale'    => __('Gross Annual Sale'),
-                'state.prev_work_status'    => __('Previously work With IHL'),
+                'state.prev_work_status'    => __('Previously Work With IHL'),
                 'state.geographical_area'    => __('Geographical Area'),
             ],
         ];

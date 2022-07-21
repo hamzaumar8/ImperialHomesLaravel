@@ -2,8 +2,9 @@
 
 namespace App\Steps;
 
+
 use Vildanbina\LivewireWizard\Components\Step;
-use Illuminate\Validation\Rule;
+
 
 class CompanyLegal extends Step
 {
@@ -36,18 +37,6 @@ class CompanyLegal extends Step
         return 'adjustments';
     }
 
-    /*
-     * When Wizard Form has submitted
-     */
-    public function save($state)
-    {
-        $user = $this->model;
-
-        $user->name     = $state['name'];
-        $user->email    = $state['email'];
-
-        $user->save();
-    }
 
     /*
      * Step Validation
@@ -58,18 +47,19 @@ class CompanyLegal extends Step
             [
                 'state.legal_structure' => ['required'],
                 'state.business_type' => ['required'],
-                'state.other' => ['string'],
                 'state.insured' => ['required'],
                 'state.bonded' => ['required'],
                 'state.licensed' => ['required'],
-                'state.license_number' => ['required'],
-                'state.additional_information' => ['required'],
                 'state.tin' => ['required'],
             ],
             [],
             [
-                'state.name'     => __('Name'),
-                'state.email'    => __('Email'),
+                'state.legal_structure' => __('Legal Structure'),
+                'state.business_type' => __('Business Type'),
+                'state.insured' => __('Insured'),
+                'state.bonded' => __('Bonded'),
+                'state.licensed' => __('Licensed'),
+                'state.tin' => __('Tax indentification Number'),
             ],
         ];
     }
@@ -80,5 +70,25 @@ class CompanyLegal extends Step
     public function title(): string
     {
         return __('Compnay Legals');
+    }
+
+
+    // TODO::Others validate
+    public function updatedStateBusinessType($name, $value)
+    {
+
+        if ($name == 'other') {
+            // dd('hamza out', $name, $value);
+        }
+        // Something you want
+    }
+    // TODO::Others validate
+    public function updatedStateLicensed($name, $value)
+    {
+
+        if ($name == 'yes') {
+            // dd('hamza out', $name, $value);
+        }
+        // Something you want
     }
 }

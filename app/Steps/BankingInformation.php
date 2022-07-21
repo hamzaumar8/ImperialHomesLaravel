@@ -28,7 +28,7 @@ class BankingInformation extends Step
     */
     public function icon(): string
     {
-        return 'check';
+        return 'cash';
     }
 
     /*
@@ -36,12 +36,12 @@ class BankingInformation extends Step
      */
     public function save($state)
     {
-        $user = $this->model;
+        $company = $this->model;
 
-        $user->name = $state['name'];
-        $user->email = $state['email'];
+        // $user->name = $state['name'];
+        // $user->email = $state['email'];
 
-        $user->save();
+        // $user->save();
     }
 
     /*
@@ -51,13 +51,17 @@ class BankingInformation extends Step
     {
         return [
             [
-                'state.name'     => ['required', Rule::unique('users', 'name')->ignoreModel($this->model)],
-                'state.email'    => ['required', Rule::unique('users', 'email')->ignoreModel($this->model)],
+                'state.bank_name'     => ['required'],
+                'state.bank_address'    => ['required',],
+                'state.beneficiary_name'    => ['required',],
+                'state.account_number'    => ['required', 'numeric'],
             ],
             [],
             [
-                'state.name'     => __('Name'),
-                'state.email'    => __('Email'),
+                'state.name'     => __('Bank Name'),
+                'state.email'    => __('Bank Address'),
+                'state.email'    => __('Beneficiary Name'),
+                'state.email'    => __('Account Number'),
             ],
         ];
     }

@@ -13,7 +13,6 @@ class FormWizard extends WizardComponent
     // My custom class property
     public Company $compnay;
 
-
     public array $steps = [
         CompanyProfile::class,
         CompanyLegal::class,
