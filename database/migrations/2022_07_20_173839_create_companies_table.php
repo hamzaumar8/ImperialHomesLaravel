@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('website')->nullable();
             $table->string('details_of_service_goods');
             $table->date('established_date');
-            $table->interger('gross_annual_sale');
+            $table->integer('gross_annual_sale')->unsigned();
             $table->enum('legal_structure', ['corporation', 'partnership', 'sole proprietorship', 'joint venture', 'franchise', 'non-profit']);
             $table->enum('business_type', ['retailer', 'construction contractor', 'distributor', 'manufacturer', 'wholesaler', 'consultant', 'freight / transportation', 'service provider', 'other']);
             $table->string('other')->nullable();
@@ -33,7 +33,7 @@ return new class extends Migration
             $table->enum('insured', ['yes', 'no']);
             $table->enum('bonded', ['yes', 'no']);
             $table->enum('licensed', ['yes', 'no']);
-            $table->string('license_number', ['yes', 'no'])->nullable();
+            $table->string('license_number')->nullable();
             $table->text('additional_information')->nullable();
             $table->string('tin');
             $table->string('bank_name');
