@@ -1,5 +1,5 @@
 <div>
-    <form method="POST" wire:submit.prevent="save">
+    <form wire:submit.prevent="save">
         @csrf
         <div class="mb-4 text-xl font-semibold text-gray-700">
             {{ __('Contact Person') }}
@@ -22,23 +22,23 @@
             </div>
             <div class="col-span-3">
                 <div class="grid grid-cols-2 gap-4">
-                    <x-input label="Full Name" type="text" placeholder="Full Name" required wire:model.lazy="name" />
+                    <x-input label="Full Name" type="text" placeholder="Full Name" required wire:model="name" />
 
-                    <x-input label="Email" type="text" required wire:model.lazy="email" disabled />
+                    <x-input label="Email" type="text" required wire:model="email" disabled />
 
                     <x-input label="Position/Title" id="position" type="text" placeholder="Position or Title" required
-                        wire:model.lazy="position" />
+                        wire:model="position" />
 
                     <x-inputs.maskable label="Phone No. 1"
                         mask="['(###) ###-####', '+# ### ###-####', '+## ## ####-####']" placeholder="Phone number 1"
-                        required wire:model.lazy="phone1" />
+                        required wire:model="phone1" />
 
                     <x-inputs.maskable label="Phone No. 2 (optional)"
                         mask="['(###) ###-####', '+# ### ###-####', '+## ## ####-####']" placeholder="Phone number 2"
-                        wire:model.lazy="phone2" />
+                        wire:model="phone2" />
 
                     <x-inputs.maskable label="ID Number (Ghana Card Only)" mask="AAA-#########-#"
-                        placeholder="GHA-000000000-0" required wire:model.lazy="id_number" />
+                        placeholder="GHA-000000000-0" required wire:model="id_number" />
 
                 </div>
             </div>
