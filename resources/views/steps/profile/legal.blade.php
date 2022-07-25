@@ -71,7 +71,7 @@
 
 
     <div class="mb-4">
-        <x-input label="Additional Information" id="additional_information" class="block mt-1 w-full" type="text"
-            name="additional_information" required wire:model="state.additional_information" />
+        <x-textarea label="Additional Information" id="additional_information" name="additional_information" required
+            wire:model="state.additional_information" />
     </div>
 </div>

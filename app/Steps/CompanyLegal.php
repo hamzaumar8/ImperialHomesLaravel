@@ -78,6 +78,7 @@ class CompanyLegal extends Step
     {
 
         if ($name == 'other') {
+            $this->validate(['state.other' => ['required'],]);
             // dd('hamza out', $name, $value);
         }
         // Something you want

@@ -10,7 +10,7 @@
     </div>
 
     <div class="mb-4">
-        <x-input label="Bank Address" id="bank_address" class="block mt-1 w-full" type="email" name="bank_address"
+        <x-input label="Bank Address" id="bank_address" class="block mt-1 w-full" type="text" name="bank_address"
             required wire:model="state.bank_address" />
     </div>
 

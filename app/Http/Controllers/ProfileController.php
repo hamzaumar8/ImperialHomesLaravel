@@ -10,4 +10,8 @@ class ProfileController extends Controller
     {
         return view('user.profile');
     }
+    public function companyverify()
+    {
+        return view('user.companyprofile');
+    }
 }

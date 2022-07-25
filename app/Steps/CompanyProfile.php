@@ -51,7 +51,7 @@ class CompanyProfile extends Step
                 'state.mailing_address'    => ['required', 'string', 'max:255'],
                 'state.phone1'    => ['required', 'max:20'],
                 'state.phone2'    => ['max:20'],
-                'state.website'    => ['max:255'],
+                'state.website'    => ['url', 'max:255'],
                 'state.details_of_service_goods'    => ['required', 'max:255'],
                 'state.established_date'    => ['required', 'max:255'],
                 'state.gross_annual_sale'    => ['required', 'numeric'],

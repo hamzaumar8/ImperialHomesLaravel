@@ -22,9 +22,11 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
     //Profile route for user updating INFO
-    Route::get('/verify/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::get('/verify/company', [ProfileController::class, 'companyverify'])->name('company.verify');
 
-    Route::middleware(['authprofile'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'index'])->middleware(['authcompany'])->name('profile');
+
+    Route::middleware(['authcompany', 'authprofile'])->group(function () {
         Route::get('/dashboard', function () {
             return view('dashboard');
         })->name('dashboard');
