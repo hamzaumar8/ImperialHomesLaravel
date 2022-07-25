@@ -16,9 +16,7 @@
                 @csrf
 
                 <div>
-                    <x-button>
-                        {{ __('Resend Verification Email') }}
-                    </x-button>
+                    <x-button type="submit" rose class="w-full" :label="__('Resend Verification Email')" />
                 </div>
             </form>
 

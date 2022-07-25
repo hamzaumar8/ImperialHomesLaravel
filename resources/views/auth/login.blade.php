@@ -11,23 +11,18 @@
 
             <!-- Email Address -->
             <div>
-                <x-label for="email" :value="__('Email')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
-                    autofocus />
+                <x-input label="Email" id="email" class="block mt-1 w-full" type="email" name="email"
+                    :value="old('email')" required autofocus />
             </div>
 
             <!-- Password -->
             <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required
-                    autocomplete="current-password" />
+                <x-input label="Password" id="password" class="block mt-1 w-full" type="password" name="password"
+                    required autocomplete="current-password" />
             </div>
 
             <!-- Remember Me -->
-
-
             <div class="flex items-center justify-between mt-5">
                 <div class="block">
                     <label for="remember_me" class="inline-flex items-center">
@@ -45,12 +40,10 @@
                 @endif
             </div>
             <div class="flex items-center justify-end mt-5">
-                <button class="w-full">
-                    {{ __('Log in') }}
-                </button>
+                <x-button rose class="w-full" type="submit" :label="__('Log in')" />
             </div>
 
-            <div class="flex items-center justify-center mt-4">
+            <div class=" flex items-center justify-center mt-4">
                 @if (Route::has('register'))
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
                     {{ __('Not a member?') }} <span class="font-bold">{{ __('Create one')}}

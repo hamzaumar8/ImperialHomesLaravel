@@ -13,31 +13,24 @@
 
             <!-- Email Address -->
             <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email"
+                <x-input label="Email" id="email" class="block mt-1 w-full" type="email" name="email"
                     :value="old('email', $request->email)" required autofocus />
             </div>
 
             <!-- Password -->
             <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required />
+                <x-input label="Password" id="password" class="block mt-1 w-full" type="password" name="password"
+                    required />
             </div>
 
             <!-- Confirm Password -->
             <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full" type="password"
+                <x-input label="Confirm Password" id="password_confirmation" class="block mt-1 w-full" type="password"
                     name="password_confirmation" required />
             </div>
 
             <div class="flex  mt-4">
-                <x-button class="w-full">
-                    {{ __('Reset Password') }}
-                </x-button>
+                <x-button type="submit" rose class="w-full" :label="__('Reset Password')" />
             </div>
         </form>
     </x-auth-card>

@@ -16,16 +16,12 @@
 
             <!-- Email Address -->
             <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
-                    autofocus />
+                <x-input label="Email id=" email" class="block mt-1 w-full" type="email" name="email"
+                    :value="old('email')" required autofocus />
             </div>
 
             <div class="flex mt-5">
-                <x-button class="w-full">
-                    {{ __('Email Password Reset Link') }}
-                </x-button>
+                <x-button type="submit" rose class="w-full" :label="__('Email Password Reset Link')" />
             </div>
         </form>
     </x-auth-card>
