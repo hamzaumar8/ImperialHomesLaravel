@@ -30,15 +30,13 @@ class Form extends Component
         ];
     }
 
-    // public function updated($fields)
-    // {
-    //     $this->validateOnly($fields);
-    // }
+    public function updated($fields)
+    {
+        $this->validateOnly($fields);
+    }
 
     public function save()
     {
-
-        dd($this->id_number);
         $this->validate();
         $profile = new Profile();
         $profile->user_id = Auth::user()->id;
@@ -52,7 +50,10 @@ class Form extends Component
         $profile->passport_picture = $imageName;
         $profile->save();
 
-        dd($profile->user->id);
+        $profile->user->name = $this->name;
+        $profile->user->save();
+
+        return redirect()->route('dashboard');
     }
 
     public function render()
