@@ -1,43 +1,50 @@
 <div>
-    <form method="POST" wire:submit.prevent="sendInvite">
+    <form method="POST" wire:submit.prevent="save">
         @csrf
         <div class="mb-4 text-xl font-semibold text-gray-700">
             {{ __('Contact Person') }}
         </div>
-        <div class="mb-4">
-            <x-input label="Full Name" id=" name" class="block mt-1 w-full" type="text" name="name" required
-                wire:model.lazy="name" />
-            @error('name') <p class="text-red-500">{{$message}}</p> @enderror
-        </div>
 
-        <div class="mb-4">
-            <x-input label="Position/Title" id="position" class="block mt-1 w-full" type="text" name="position" required
-                wire:model.lazy="position" />
-            @error('position') <p class="text-red-500">{{$message}}</p> @enderror
-        </div>
+        <div class="grid grid-cols-4 gap-4">
+            <div class="">
+                <div class="shadow-md p-2 mb-4 rounded">
+                    @if($passport_picture)
+                    <img src="{{$passport_picture->temporaryUrl()}}" class="max-w-full max-h-[150px] text-center"
+                        alt="">
+                    @else
+                    <img src="{{asset('assets/img/profile/default.png')}}" class="max-w-full max-h-[150px] text-center"
+                        alt="default profile">
+                    @endif
+                </div>
+                <div class="mb-4">
+                    <x-input label="Passport Picture" type="file" wire:model="passport_picture" required />
+                </div>
+            </div>
+            <div class="col-span-3">
+                <div class="grid grid-cols-2 gap-4">
+                    <x-input label="Full Name" type="text" placeholder="Full Name" required wire:model.lazy="name" />
 
-        <div class="mb-4">
-            <x-input label="Phone No. 1" id="phone1" class="block mt-1 w-full" type="tel" name="phone1" required
-                wire:model.lazy="phone1" />
-            @error('phone1') <p class="text-red-500">{{$message}}</p> @enderror
-        </div>
+                    <x-input label="Email" type="text" required wire:model.lazy="email" disabled />
 
-        <div class="mb-4">
-            <x-input label="Phone No. 2 (optional)" id="phone2" class="block mt-1 w-full" type="tel" name="phone2"
-                wire:model.lazy="phone2" />
-            @error('phone2') <p class="text-red-500">{{$message}}</p> @enderror
-        </div>
+                    <x-input label="Position/Title" id="position" type="text" placeholder="Position or Title" required
+                        wire:model.lazy="position" />
 
-        <div class="mb-4">
-            <x-input label="ID Number (Ghana Card Only)" id="id_number" class="block mt-1 w-full" type="tel"
-                name="id_number" required wire:model.lazy="id_number" />
-            @error('id_number') <p class="text-red-500">{{$message}}</p> @enderror
-        </div>
+                    <x-inputs.maskable label="Phone No. 1"
+                        mask="['(###) ###-####', '+# ### ###-####', '+## ## ####-####']" placeholder="Phone number 1"
+                        required wire:model.lazy="phone1" />
 
+                    <x-inputs.maskable label="Phone No. 2 (optional)"
+                        mask="['(###) ###-####', '+# ### ###-####', '+## ## ####-####']" placeholder="Phone number 2"
+                        wire:model.lazy="phone2" />
+
+                    <x-inputs.maskable label="ID Number (Ghana Card Only)" mask="AAA-#########-#"
+                        placeholder="GHA-000000000-0" required wire:model.lazy="id_number" />
+
+                </div>
+            </div>
+        </div>
         <div class="flex items-center justify-end mt-4">
-            <x-button type='submit'>
-                {{ __('Send Invite') }}
-            </x-button>
+            <x-button rose type="submit" spinner="submit" :label="__('Save')" />
         </div>
     </form>
 </div>

@@ -39,8 +39,8 @@ return new class extends Migration
             $table->string('bank_name');
             $table->string('bank_address');
             $table->string('beneficiary_name');
-            $table->integer('account_number');
-            $table->date('vendor_number')->nullable();
+            $table->string('account_number');
+            $table->string('vendor_number')->nullable();
             $table->date('date_approved')->nullable();
             $table->timestamps();
         });
