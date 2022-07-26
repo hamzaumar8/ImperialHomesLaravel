@@ -38,13 +38,13 @@ class Form extends Component
     public function save()
     {
         $this->validate();
+
         $profile = new Profile();
         $profile->user_id = Auth::user()->id;
         $profile->position = $this->position;
         $profile->phone1 = $this->phone1;
         $profile->phone2 = $this->phone2;
         $profile->id_number = $this->id_number;
-
         $imageName = Carbon::now()->timestamp . '.' . $this->passport_picture->extension();
         $this->passport_picture->storeAs('profile', $imageName);
         $profile->passport_picture = $imageName;

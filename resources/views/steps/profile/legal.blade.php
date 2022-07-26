@@ -8,8 +8,7 @@
             ['value' => 'sole proprietorship', 'name' => 'Sole Proprietorship'],
             ['value' => 'joint venture', 'name' => 'Joint Venture'],
             ['value' => 'franchise', 'name' => 'Franchise'],
-            ['value' => 'non-profit', 'name' => 'Non-Profit']]" option-label="name" option-value="value"
-                wire:model="state.legal_structure" />
+            ['value' => 'non-profit', 'name' => 'Non-Profit']]" option-label="name" option-value="value" wire:model.lazy="state.legal_structure" />
         </div>
 
         <div class="mb-4">
@@ -24,12 +23,11 @@
             ['value' =>'freight / transportation', 'name' => 'Freight / Transportation'],
             ['value' =>'service provider', 'name' => 'Service Provider'],
             ['value' =>'other', 'name' => 'Other']
-            ]" option-label="name" option-value="value" wire:model="state.business_type" />
+            ]" option-label="name" option-value="value" wire:model.lazy="state.business_type" />
 
             @if ($this->state['business_type'] == 'other')
 
-            <x-input label="Other" id="other" class="block mt-1 w-full" type="text" name="other" required
-                wire:model="state.other" />
+            <x-input label="Other" id="other" class="block mt-1 w-full" type="text" name="other" required wire:model.lazy="state.other" />
             @endif
         </div>
 
@@ -38,7 +36,7 @@
                 ['name' => '',  'value' => ''],
                 ['name' => 'Yes',  'value' => 'yes'],
                 ['name' => 'No',  'value' => 'no'],
-                ]" option-label="name" option-value="value" wire:model="state.insured" />
+                ]" option-label="name" option-value="value" wire:model.lazy="state.insured" />
         </div>
 
         <div class="mb-4">
@@ -46,7 +44,7 @@
                 ['name' => '',  'value' => ''],
                 ['name' => 'Yes',  'value' => 'yes'],
                 ['name' => 'No',  'value' => 'no'],
-                ]" option-label="name" option-value="value" wire:model="state.bonded" />
+                ]" option-label="name" option-value="value" wire:model.lazy="state.bonded" />
         </div>
 
         <div class="mb-4">
@@ -54,24 +52,21 @@
                 ['name' => '',  'value' => ''],
                 ['name' => 'Yes',  'value' => 'yes'],
                 ['name' => 'No',  'value' => 'no'],
-                ]" option-label="name" option-value="value" wire:model="state.licensed" />
+                ]" option-label="name" option-value="value" wire:model.lazy="state.licensed" />
 
             @if ($this->state['licensed'] == 'yes')
-            <x-input label="License Number" id="license_number" class="block mt-1 w-full" type="text"
-                name="license_number" required wire:model="state.license_number" />
+            <x-input label="License Number" id="license_number" class="block mt-1 w-full" type="text" name="license_number" required wire:model.lazy="state.license_number" />
 
             @endif
         </div>
 
         <div class="mb-4">
-            <x-input label="Tax indentification Number" id="tin" class="block mt-1 w-full" type="text" name="tin"
-                required wire:model="state.tin" />
+            <x-input label="Tax indentification Number" id="tin" class="block mt-1 w-full" type="text" name="tin" required wire:model.lazy="state.tin" />
         </div>
     </div>
 
 
     <div class="mb-4">
-        <x-textarea label="Additional Information" id="additional_information" name="additional_information" required
-            wire:model="state.additional_information" />
+        <x-textarea label="Additional Information" id="additional_information" name="additional_information" required wire:model.lazy="state.additional_information" />
     </div>
 </div>
