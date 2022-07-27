@@ -38,8 +38,6 @@
                         </button>
                     </x-slot>
 
-                    <x-dropdown.item label="Help Center" />
-                    <x-dropdown.item separator label="Live Chat" />
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <x-dropdown.item separator label="Logout" :href="route('logout')"
