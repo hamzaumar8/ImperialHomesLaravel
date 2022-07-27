@@ -20,6 +20,7 @@
 </head>
 
 <body class="font-sans antialiased">
+    <x-notifications />
     <div class="min-h-screen bg-primary-color">
         @include('layouts.navigation')
         <!-- Page Content -->

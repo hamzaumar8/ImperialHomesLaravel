@@ -38,6 +38,7 @@
                         </button>
                     </x-slot>
 
+                    <x-dropdown.item label="Profile" :href="route('profile')" />
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <x-dropdown.item separator label="Logout" :href="route('logout')"

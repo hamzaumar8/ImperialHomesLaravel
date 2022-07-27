@@ -1,6 +1,6 @@
 <div>
 
-    <form wire:submit.prevent="save">
+    <form wire:submit.prevent="updateProfile">
         @csrf
         <div class="mb-4 text-xl font-semibold text-gray-700">
             {{ __('Contact Person') }}
@@ -20,9 +20,9 @@
                         alt="default profile">
                     @endif
                 </div>
-                <div class="mb-4">
+                <!-- <div class="mb-4">
                     <x-input label="Passport Picture" type="file" wire:model.lazy="newimage" />
-                </div>
+                </div> -->
             </div>
             <div class="col-span-3">
                 <div class="grid grid-cols-2 gap-4">
@@ -48,7 +48,7 @@
             </div>
         </div>
         <div class="flex items-center justify-end mt-4">
-            <x-button rose type="submit" spinner="submit" :label="__('update')" />
+            <x-button rose type="submit" spinner="submit" :label="__('Update')" />
         </div>
     </form>
 </div>
