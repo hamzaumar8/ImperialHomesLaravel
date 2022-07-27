@@ -11,10 +11,11 @@
 
             <!-- Email Address -->
             <div>
-
-                <x-input label="Email" id="email" class="block mt-1 w-full" type="email" name="email"
-                    :value="old('email')" required autofocus />
+                <x-input label="Email / Phone Number" id="emailphone" class="block mt-1 w-full" type="text"
+                    placeholder="Enter your Email or Phone number" name="emailphone" :value="old('emailphone')" required
+                    autofocus />
             </div>
+
 
             <!-- Password -->
             <div class="mt-4">
@@ -39,6 +40,7 @@
                 </a>
                 @endif
             </div>
+
             <div class="flex items-center justify-end mt-5">
                 <x-button rose class="w-full" type="submit" :label="__('Log in')" />
             </div>

@@ -14,6 +14,11 @@
 
             <!-- Email Address -->
             <div class="mt-4">
+                <x-input label="Phone Number" id="phone" :value="old('phone')" name="phone" required />
+            </div>
+
+            <!-- Phone Number -->
+            <div class="mt-4">
                 <x-input label="Email" id="email" type="email" name="email" :value="old('email')" required />
             </div>
 
@@ -28,6 +33,7 @@
                 <x-input label="Confirm Password" id="password_confirmation" type="password"
                     name="password_confirmation" required />
             </div>
+
 
             <div class="flex items-center justify-center mt-4">
                 <x-button type="submit" rose class="w-full" :label="__('Register')" />
