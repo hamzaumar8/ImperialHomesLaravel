@@ -9,16 +9,19 @@
         <div class="grid grid-cols-4 gap-4">
             <div class="">
                 <div class="shadow-md p-2 mb-4 rounded">
-                    @if($passport_picture)
+                    @if($newimage)
                     <img src="{{$passport_picture->temporaryUrl()}}" class="max-w-full max-h-[150px] text-center"
                         alt="">
+                    @elseif($passport_picture)
+                    <img src="{{asset('assets/img/profile')}}/{{$passport_picture}}"
+                        class="max-w-full max-h-[150px] text-center" alt="">
                     @else
                     <img src="{{asset('assets/img/profile/default.png')}}" class="max-w-full max-h-[150px] text-center"
                         alt="default profile">
                     @endif
                 </div>
                 <div class="mb-4">
-                    <x-input label="Passport Picture" type="file" wire:model.lazy="passport_picture" required />
+                    <x-input label="Passport Picture" type="file" wire:model.lazy="newimage" />
                 </div>
             </div>
             <div class="col-span-3">
@@ -45,7 +48,7 @@
             </div>
         </div>
         <div class="flex items-center justify-end mt-4">
-            <x-button rose type="submit" spinner="submit" :label="__('Save')" />
+            <x-button rose type="submit" spinner="submit" :label="__('update')" />
         </div>
     </form>
 </div>

@@ -18,8 +18,8 @@ class AuthCompnay
      */
     public function handle(Request $request, Closure $next)
     {
-        $userProfile = Company::where('user_id', Auth::user()->id)->first();
-        if (!$userProfile) {
+        $company = Company::where('user_id', Auth::user()->id)->first();
+        if (!$company) {
             return redirect()->route('company.verify');
         }
         return $next($request);

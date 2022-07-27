@@ -23,6 +23,7 @@
     <div class="min-h-screen bg-primary-color">
         @include('layouts.navigation')
         <!-- Page Content -->
+
         <main>
             {{ $slot }}
         </main>

@@ -7,9 +7,11 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use WireUi\Traits\Actions;
 
 class Form extends Component
 {
+    use Actions;
     use WithFileUploads;
     public $name, $email, $position, $phone1, $phone2, $id_number, $passport_picture;
 
