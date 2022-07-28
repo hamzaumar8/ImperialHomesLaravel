@@ -69,7 +69,8 @@ class Edit extends Component
             $title = 'Profile saved',
             $description = 'Your profile was successfull saved'
         );
-        // return redirect()->route('dashboard');
+
+        // return redirect('/dashboard')->with('status', 'Profile updated!');
     }
 
     public function render()

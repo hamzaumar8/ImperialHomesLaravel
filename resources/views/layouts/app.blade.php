@@ -39,6 +39,8 @@
     </footer>
 
     <livewire:scripts />
+
+    @stack('custom-scripts')
 </body>
 
 </html>

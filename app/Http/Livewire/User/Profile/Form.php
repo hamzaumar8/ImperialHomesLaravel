@@ -55,7 +55,7 @@ class Form extends Component
         $profile->user->name = $this->name;
         $profile->user->save();
 
-        return redirect()->route('dashboard');
+        return redirect('/dashboard')->with('status', 'Profile updated!');
     }
 
     public function render()

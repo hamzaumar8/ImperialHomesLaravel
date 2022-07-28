@@ -1,5 +1,16 @@
 <div>
-
+    @if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+    <script>
+    window.$wireui.notify({
+        title: 'Profile saved!',
+        description: 'Your profile was successfull saved',
+        icon: 'success'
+    })
+    </script>
+    @endif
     <form wire:submit.prevent="updateProfile">
         @csrf
         <div class="mb-4 text-xl font-semibold text-gray-700">
