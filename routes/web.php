@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -17,5 +18,13 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware(['authcompany', 'authprofile'])->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    });
+
+
+    // Admin Routes 
+    Route::middleware(['authadmin'])->group(function () {
+        Route::group(['prefix' => 'admin'], function () {
+            Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+        });
     });
 });
