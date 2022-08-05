@@ -15,6 +15,7 @@
 
     <!-- Styles -->
     <livewire:styles />
+    @powerGridStyles
 
     <!-- Scripts -->
     <wireui:scripts />
@@ -39,7 +40,9 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <livewire:scripts />
+    @powerGridScripts
 
     @stack('custom-scripts')
 </body>
