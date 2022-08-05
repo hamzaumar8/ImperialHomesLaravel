@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\admin\VendorController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -24,7 +25,9 @@ Route::middleware(['auth'])->group(function () {
     // Admin Routes 
     Route::middleware(['authadmin'])->group(function () {
         Route::group(['prefix' => 'admin'], function () {
-            Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+            Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+
+            Route::get('/dashboard', [VendorController::class, 'index'])->name('admin.dashboard');
         });
     });
 });
