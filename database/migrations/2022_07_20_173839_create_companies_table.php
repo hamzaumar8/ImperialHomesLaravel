@@ -41,7 +41,7 @@ return new class extends Migration
             $table->string('beneficiary_name');
             $table->string('account_number');
             $table->string('vendor_number')->nullable();
-            $table->enum('prev_work_status', ['pending', 'approved', 'declined', 'cancelled'])->default('pending');
+            $table->enum('status', ['pending', 'approved', 'declined', 'cancelled'])->default('pending');
             $table->date('date_approved')->nullable();
             $table->timestamps();
         });

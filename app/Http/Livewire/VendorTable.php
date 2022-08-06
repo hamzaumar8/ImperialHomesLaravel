@@ -84,8 +84,12 @@ final class VendorTable extends PowerGridComponent
     {
         return PowerGrid::eloquent()
             ->addColumn('id')
-            ->addColumn('name')
-            ->addColumn('status')
+            ->addColumn('name_uppercase', function (Company $model) {
+                return ucwords($model->name);
+            })
+            ->addColumn('status', function (Company $model) {
+                return ucwords($model->status);
+            })
             ->addColumn('created_at')
             ->addColumn('created_at_formatted', fn (Company $model) => Carbon::parse($model->created_at)->format('d/m/Y H:i:s'));
     }
@@ -111,7 +115,7 @@ final class VendorTable extends PowerGridComponent
                 ->searchable()
                 ->sortable(),
 
-            Column::make('Name', 'name')
+            Column::make('Name', 'name_uppercase')
                 ->searchable()
                 // ->makeInputText('name')
                 ->sortable(),
@@ -147,9 +151,12 @@ final class VendorTable extends PowerGridComponent
     public function actions(): array
     {
         return [
-            Button::make('edit', 'Edit')
-                ->class('bg-indigo-500 cursor-pointer text-white px-3 py-2 m-1 my-2 rounded text-xs')
-                ->route('company.edit', ['company' => 'id']),
+            // Button::make('edit', 'Edit')
+            //     ->class('bg-indigo-500 cursor-pointer text-white px-3 py-2 m-1 my-2 rounded text-xs')
+            //     ->route('company.edit', ['company' => 'id']),
+            Button::make('view', 'Manage')
+                ->class('text-indigo-500 cursor-pointer px-3 py-2 m-1 my-2 underline text-sm')
+                ->route('company.view', ['company' => 'id']),
 
             // Button::make('destroy', 'Delete')
             //     ->class('bg-red-500 cursor-pointer text-white px-3 py-2 m-1 rounded text-sm')

@@ -27,9 +27,12 @@ Route::middleware(['auth'])->group(function () {
         Route::group(['prefix' => 'admin'], function () {
             Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
-            Route::get('/vendors', [VendorController::class, 'index'])->name('admin.vendors');
-            Route::get('/vendors/{company}', [VendorController::class, 'edit'])->name('company.edit');
-            Route::post('/vendors', [VendorController::class, 'index'])->name('company.destroy');
+            Route::group(['prefix' => 'vendors'], function () {
+                Route::get('/', [VendorController::class, 'index'])->name('admin.vendors');
+                Route::get('/{company}/view', [VendorController::class, 'show'])->name('company.view');
+                Route::get('/{company}/edit', [VendorController::class, 'edit'])->name('company.edit');
+                Route::post('/vendors', [VendorController::class, 'index'])->name('company.destroy');
+            });
         });
     });
 });

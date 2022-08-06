@@ -14,6 +14,17 @@ class VendorController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Company  $company
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Company $company)
+    {
+        return view('admin.vendor.view', compact('company'));
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Company  $company
