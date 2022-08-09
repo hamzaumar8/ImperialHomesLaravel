@@ -18,6 +18,10 @@ class AuthProfile
      */
     public function handle(Request $request, Closure $next)
     {
+        if (Auth::user()->role === 'ADM') {
+
+            return redirect()->route('admin.dashboard');
+        }
         $userProfile = Profile::where('user_id', Auth::user()->id)->first();
         if (!$userProfile) {
             return redirect()->route('profile');

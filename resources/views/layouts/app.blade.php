@@ -16,6 +16,7 @@
     <!-- Styles -->
     <livewire:styles />
     @powerGridStyles
+    @stack('custom-css')
 
     <!-- Scripts -->
     <wireui:scripts />

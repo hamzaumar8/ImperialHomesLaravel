@@ -59,8 +59,6 @@ class BankingInformation extends Step
      */
     public function save($state)
     {
-
-        // dd($this->model, $state);
         $company = $this->model;
 
         $company->user_id = Auth::user()->id;
@@ -78,9 +76,12 @@ class BankingInformation extends Step
 
         $company->legal_structure = $state['legal_structure'];
         $company->business_type = $state['business_type'];
+        $company->other = $state['other'];
         $company->insured = $state['insured'];
         $company->bonded = $state['bonded'];
         $company->licensed = $state['licensed'];
+        $company->license_number = $state['license_number'];
+        $company->additional_information = $state['additional_information'];
         $company->tin = $state['tin'];
 
         $company->bank_name = $state['bank_name'];

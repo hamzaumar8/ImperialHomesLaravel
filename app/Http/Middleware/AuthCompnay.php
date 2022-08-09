@@ -18,6 +18,10 @@ class AuthCompnay
      */
     public function handle(Request $request, Closure $next)
     {
+        if (Auth::user()->role === 'ADM') {
+
+            return redirect()->route('admin.dashboard');
+        }
         $company = Company::where('user_id', Auth::user()->id)->first();
         if (!$company) {
             return redirect()->route('company.verify');
