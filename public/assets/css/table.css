@@ -1,5 +1,4 @@
 table {
-    font-size: 75%;
     table-layout: fixed;
     width: 100%;
 }
@@ -119,7 +118,6 @@ article h1 {
 
 article address {
     float: left;
-    font-size: 125%;
     font-weight: bold;
 }
 
@@ -186,7 +184,6 @@ table.balance td {
 /* aside */
 aside {
     margin-top: 10px;
-    font-size: 13px;
 }
 
 aside h1 {
@@ -202,7 +199,6 @@ aside h1 {
 
 .grphead {
     font-weight: bolder;
-    font-size: 15px;
     text-align: center;
 }
 

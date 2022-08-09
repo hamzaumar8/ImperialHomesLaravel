@@ -73,27 +73,38 @@
                     <tr>
                         <th width="40%">10. LEGAL STRUCTURE :</th>
                         <td width="20%">
-                            <div><input type="checkbox" name="checkbox" id="checkbox"> CORPORATION</div>
+                            <div><input type="checkbox" name="legal_structure" id="legal_structure"
+                                    {{$company->legal_structure === 'corporation' ? 'checked':'disabled'}}> CORPORATION
+                            </div>
                         </td>
                         <td width="20%">
-                            <div><input type="checkbox" name="checkbox" id="checkbox"> PARTNERSHIP</div>
+                            <div><input type="checkbox" name="legal_structure" id="legal_structure"
+                                    {{$company->legal_structure === 'partnership' ? 'checked':'disabled'}}> PARTNERSHIP
+                            </div>
                         </td>
                         <td width="20%">
-                            <div><input type="checkbox" name="checkbox" id="checkbox"> SOLE
+                            <div><input type="checkbox" name="legal_structure" id="legal_structure"
+                                    {{$company->legal_structure === 'sole proprietorship' ? 'checked':'disabled'}}> SOLE
                                 PROPRIETOSHIP</div>
                         </td>
                     </tr>
                     <tr>
                         <th width="40%"></th>
                         <td width="20%">
-                            <div><input type="checkbox" name="checkbox" id="checkbox"> JOINT VENTURE
+                            <div><input type="checkbox" name="legal_structure" id="legal_structure"
+                                    {{$company->legal_structure === 'joint venture' ? 'checked':'disabled'}}> JOINT
+                                VENTURE
                             </div>
                         </td>
                         <td width="20%">
-                            <div><input type="checkbox" name="checkbox" id="checkbox"> FRANCHISE</div>
+                            <div><input type="checkbox" name="legal_structure" id="legal_structure"
+                                    {{$company->legal_structure === 'franchise' ? 'checked':'disabled'}}> FRANCHISE
+                            </div>
                         </td>
                         <td width="20%">
-                            <div><input type="checkbox" name="checkbox" id="checkbox"> NON-PROFIT</div>
+                            <div><input type="checkbox" name="legal_structure" id="legal_structure"
+                                    {{$company->legal_structure === 'non-profit' ? 'checked':'disabled'}}> NON-PROFIT
+                            </div>
                         </td>
                     </tr>
                 </tbody>
