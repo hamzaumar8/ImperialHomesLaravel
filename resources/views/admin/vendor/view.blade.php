@@ -4,9 +4,6 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <h2>Details list</h2>
-
-
-
                     <page size="A4">
                         <article>
                             <table class="nationalid">

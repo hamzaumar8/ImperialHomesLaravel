@@ -13,6 +13,7 @@
                     </div>
                     @else
                     <livewire:user.profile.form-wizard />
+                    {{-- <livewire:vendor-form-wizard />--}}
                     @endif
                 </div>
             </div>
