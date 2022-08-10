@@ -155,9 +155,8 @@ final class VendorTable extends PowerGridComponent
             //     ->class('bg-indigo-500 cursor-pointer text-white px-3 py-2 m-1 my-2 rounded text-xs')
             //     ->route('company.edit', ['company' => 'id']),
             Button::make('view', 'Manage')
-                ->class('text-indigo-500 cursor-pointer px-3 py-2 m-1 my-2 underline text-sm')
+                ->class('text-indigo-500 cursor-pointer underline text-sm')
                 ->route('company.view', ['company' => 'id']),
-
             // Button::make('destroy', 'Delete')
             //     ->class('bg-red-500 cursor-pointer text-white px-3 py-2 m-1 rounded text-sm')
             //     ->route('company.destroy', ['company' => 'id'])
