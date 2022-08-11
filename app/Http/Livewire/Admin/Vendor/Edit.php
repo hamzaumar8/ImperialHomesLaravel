@@ -9,11 +9,7 @@ use Livewire\Component;
 class Edit extends Component
 {
     public Company $company;
-    public $name, $email, $mailing_address, $phone1, $phone2, $website, $details_of_service_goods, $established_date, $gross_annual_sale, $prev_work_status, $geographical_area;
-
-    public $legal_structure, $business_type, $other, $insured, $bonded, $licensed, $license_number, $additional_information, $tin;
-
-    public $bank_name, $bank_address, $beneficiary_name, $account_number;
+    public $name, $email, $mailing_address, $phone1, $phone2, $website, $details_of_service_goods, $established_date, $gross_annual_sale, $prev_work_status, $geographical_area, $legal_structure, $business_type, $other, $insured, $bonded, $licensed, $license_number, $additional_information, $tin, $bank_name, $bank_address, $beneficiary_name, $account_number;
 
     public function mount($company)
     {
